@@ -1,19 +1,31 @@
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Edit account', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Sign up', new_user_registration_path)  %>
-  </li>
-<% end %>
-
+               <div id="header">
+			<div id="logo">
+				<h1><a href="#">Outcome </a></h1>
+				<p> some other stuff </p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><%= link_to('Home', root_path) %></li>
+					<% if user_signed_in? %>
+  					<li>
+  					  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+  					</li>
+					<% else %>
+  					<li>
+  					  <%= link_to('Login', new_user_session_path)  %>  
+  					</li>
+					<% end %>
+					<% if user_signed_in? %>
+  					<li>
+  					  <%= link_to('Profile', edit_user_registration_path) %>
+  					</li>
+					<% else %>
+  					<li>
+  					  <%= link_to('Sign up', new_user_registration_path)  %>
+  					</li>
+					<% end %>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
