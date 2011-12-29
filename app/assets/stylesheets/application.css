@@ -140,17 +140,16 @@ a:hover {
 /* Search */
 
 #search {
-	float: right;
-	width: 280px;
+	float: left;
+	width: 410px;
 	height: 60px;
-	padding: 20px 0px 0px 0px;
-	background: #F3F3EE;
+	padding: 11px 0px 0px 0px;
 }
 
 #search form {
 	height: 41px;
 	margin: 0;
-	padding: 10px 0 0 20px;
+	padding: 10px 0 0 5px;
 }
 
 #search fieldset {
@@ -160,7 +159,7 @@ a:hover {
 }
 
 #search-text {
-	width: 170px;
+	width: 320px;
 	padding: 6px 5px 2px 5px;
 	border: 1px solid #DEDEDE;
 	background: #FFFFFF;
@@ -182,8 +181,18 @@ a:hover {
 	width: 60px;
 	height: 22px;
 	border: none;
-	background: #77476B;
+	background: #451739;
 	color: #FFFFFF;
+}
+#error_explanation h2 {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+        font-weight: bold;
+	color:  #FFFFFF;
+}
+.field_with_errors {
+        font-weight: bold;
+	color:  #FFFFFF;
 }
 /* Menu */
 
@@ -378,23 +387,7 @@ a:hover {
 	color: #5A1F4B;
 }
 
-#sidebar ul li form {
-	padding-left: 30px;
-	text-align: left;
-	letter-spacing: -.5px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #5A1F4B;
-}
 
-#sidebar ul li #shared_links {
-	padding-left: 30px;
-	text-align: left;
-	letter-spacing: -.5px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #5A1F4B;
-}
 /* Calendar */
 
 #calendar {

@@ -1,8 +1,6 @@
-<h2>Sign up</h2>
-
+<%@title = "| SignUp"%>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
 
@@ -19,3 +17,5 @@
 <% end %>
   <div id="shared_links">
 <%= render :partial => "devise/shared/links" %></div>
+
+

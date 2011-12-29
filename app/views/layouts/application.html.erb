@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Outcome</title>
+  <title>Outcome <%= @title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -23,7 +23,7 @@
 						<h2 class="title"><a href="#">welcome to outcome  </a></h2>
 						<p class="meta"><span class="date">May 10, 2010</span><span class="posted">Posted by <a href="#">Someone</a></span></p>
 						<div class="entry">
-							
+						     <%= yield %>
 						</div>
 						<p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
 					</div>
@@ -48,20 +48,8 @@
 				<!-- end #content -->
 				<div id="sidebar">
 					<ul>
-						<li>
-							<div id="search" >
-								<form method="get" action="#">
-									<div>
-										<input type="text" name="s" id="search-text" value="" />
-										<input type="submit" id="search-submit" value="GO" />
-									</div>
-								</form>
-							</div>
-							<div style="clear: both;">&nbsp;</div>
-						</li>
-						<li>
-								<%= yield %>
-						</li>
+						
+						
 						<li>
 							<h2>Blogroll</h2>
 							<ul>
