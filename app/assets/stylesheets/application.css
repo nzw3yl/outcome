@@ -31,6 +31,7 @@ ul.hmenu li {
 Start new template
 */
 
+
 body {
 	margin: 0;
 	padding: 0;
@@ -69,7 +70,7 @@ ul, ol {
 
 a {
 	text-decoration: underline;
-	color: #FFD4F4;
+	color: #5A1F4B;
 }
 
 a:hover {
@@ -260,11 +261,18 @@ a:hover {
 
 .post .title {
 	height: 41px;
+        color: #5A1F4B;
 	padding: 0px 0px 0px 30px;
 	letter-spacing: -1px;
 }
 
 .post .title a {
+	text-decoration: none;
+	color: #5A1F4B;
+	border: none;
+}
+
+.post p  {
 	text-decoration: none;
 	color: #5A1F4B;
 	border: none;
@@ -363,11 +371,11 @@ a:hover {
 }
 
 #sidebar h2 {
-	height: 38px;
-	padding-left: 30px;
+        height: 41px;
+	padding: 0px 0px 0px 30px;
+	letter-spacing: -1px;
 	text-align: left;
-	letter-spacing: -.5px;
-	font-size: 1.8em;
+	font-size: 2.8em;
 	color: #5A1F4B;
 }
 
@@ -432,3 +440,29 @@ a:hover {
 #footer a {
 	color: #FFFFFF;
 }
+
+/* simple form */
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text_align: right;
+  margin: 2px 5px;
+  font-size: 14px;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+}
+
+.simple_form .required {
+  font-size: 14px;
+  font-style: bold;
+}
+
+.radio {
+  float: left;
+  width: 100%;
+  margin-right: 0.1em;
+}
+

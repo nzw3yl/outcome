@@ -23,4 +23,6 @@ gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 1.5.0"
 gem "annotate", "~> 2.4.1.beta"
 gem "validates_timeliness", "~> 3.0.8"
+gem 'simple_form'
+gem 'will_paginate', '> 3.0'
 

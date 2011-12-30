@@ -13,28 +13,27 @@
  			        <% end %>
 			</div>
 			<div id="menu">
-				<ul>
-					<li class="current_page_item"><%= link_to('Home', root_path) %></li>
+				<ul>     <% if controller_name != 'home' %>
+					<li class="current_page_item"><%= link_to('home', attainments_path) %></li>
+                                        <% else %>
+					<li class="current_page_item"><%= link_to('home', root_path) %></li>
+                                        <% end %>
+        				<li><%= link_to('new', new_attainment_path) %></li>
+					<li><a href="#">contact</a></li>
 					<% if user_signed_in? %>
   					<li>
-  					  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+  					  <%= link_to('logout', destroy_user_session_path, :method=>'delete') %>        
   					</li>
 					<% else %>
-  					<li>
-  					  <%= link_to('Login', new_user_session_path)  %>  
-  					</li>
+  					<li><a href="#">suggestions</a></li>
 					<% end %>
 					<% if user_signed_in? %>
   					<li>
-  					  <%= link_to('Profile', edit_user_registration_path) %>
+  					  <%= link_to('profile', edit_user_registration_path) %>
   					</li>
 					<% else %>
-  					<li>
-  					  <%= link_to('Sign up', new_user_registration_path)  %>
-  					</li>
+  					<li><a href="#">mobile</a></li>
 					<% end %>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
 				</ul>
 			</div>
 		</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<%= render 'shared/header' %>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<%= render 'shared/navigation' %>	
+	</div>
+        <%- flash.each do |name, msg| -%>
+         <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        <%- end -%>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">welcome to outcomes  </a></h2>
+						<p class="meta"><span class="date">be productive and achieve </span><span class="posted">where you can <a href="#">make a difference</a></span></p>
+						<div class="entry">
+						     <%= yield %>
+						</div>
+						<p class="links"><a href="#">privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">terms</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">help</p>
+					</div>
+					
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+                                   <h2 class="sidebar_title">sign in</h2>
+				   <%= render 'users/signin' %><br/>	
+ 				   <h2 class="sidebar_title">sign up</h2>
+                                   <%= render 'users/signup' %>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<%= render 'shared/footer' %>
+<!-- end #footer -->
+</body>
+</html>

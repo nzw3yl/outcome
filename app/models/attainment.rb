@@ -19,9 +19,9 @@ class Attainment < ActiveRecord::Base
 
   validates 		:name, :presence => true
   validates 		:reason, :presence => true
-  validates_datetime 	:due_date, :after => Time.now
+  #validates_datetime 	:due_date, :after => lambda {Date.current}
   validates		:target, :presence => true
-  validates		:public, :presence => true
+  validates_inclusion_of :public, :in => [true, false]
   validates		:user_id, :presence => true
 
   belongs_to :user
