@@ -8,7 +8,6 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -24,5 +23,8 @@ gem "devise", ">= 1.5.0"
 gem "annotate", "~> 2.4.1.beta"
 gem "validates_timeliness", "~> 3.0.8"
 gem 'simple_form'
-gem 'will_paginate', '> 3.0'
+
+gem 'activeadmin'
+gem 'sass-rails',   '~> 3.1.5'
+gem 'meta_search',  '>= 1.1.0.pre'
 

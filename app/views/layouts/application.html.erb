@@ -22,33 +22,14 @@
                                         
 					<div class="post">
                                                 <%= yield %>
-						<h2 class="title"><a href="#">outcome number one  </a></h2>
-						<p class="meta"><span class="date">May 10, 2010</span><span class="posted">achieved 5 of 24 <a href="#">hours</a></span></p>
-						<div class="entry">
-						     
-						</div>
-						<p class="links"><a href="#">contributions</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">linkages</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">suggestions</p>
+						
 					</div>
-					<div class="post">
-						<h2 class="title"><a href="#">lorem ipsum sed aliquam</a></h2>
-						<p class="meta"><span class="date">May 10, 2010</span><span class="posted">Posted by <a href="#">Someone</a></span></p>
-						<div class="entry">
-							<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.  Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-						</div>
-						<p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Comments</a></p>
-					</div>
-					<div class="post">
-						<h2 class="title"><a href="#">Consecteteur hendrerit </a></h2>
-						<p class="meta"><span class="date">May 10, 2010</span><span class="posted">Posted by <a href="#">Someone</a></span></p>
-						<div class="entry">
-							<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.  Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-						</div>
-						<p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Comments</a></p>
-					</div>
+					
 					<div style="clear: both;">&nbsp;</div>
 				</div>
 				<!-- end #content -->
 				<div id="sidebar">
+                                        <% if user_signed_in? %>
 					<ul>
 						
 						
@@ -75,6 +56,7 @@
 							</ul>
 						</li>
 					</ul>
+ 					<% end %>
 				</div>
 				<!-- end #sidebar -->
 				<div style="clear: both;">&nbsp;</div>
@@ -84,7 +66,7 @@
 	<!-- end #page -->
 </div>
 <div id="footer">
-	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+	<p>Copyright (c) 2012 Outcome.com. All rights reserved. </p>
 </div>
 <!-- end #footer -->
 </body>

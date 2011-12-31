@@ -1,6 +1,8 @@
 class AttainmentsController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
-   @attainments = Attainment.order("due_date").page(params[:page])
+   @attainments = Attainment.order("due_date").page(params[:page]).per(5)
   end
 
   def new

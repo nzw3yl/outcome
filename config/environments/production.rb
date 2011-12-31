@@ -44,6 +44,7 @@ Outcome::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w[active_admin.css active_admin.js]
 
   config.action_mailer.default_url_options = { :host => 'yourhost.com' }
   # ActionMailer Config

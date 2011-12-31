@@ -13,5 +13,5 @@ Factory.define :attainment do |a|
   a.target 100
   a.code "RTW"
   a.public true
-  a.association :user
+
 end

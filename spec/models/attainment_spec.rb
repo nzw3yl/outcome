@@ -35,9 +35,7 @@ describe Attainment do
 
   describe "validations" do
     
-    it "should require a user id" do
-      Attainment.new(@attr).should_not be_valid
-    end
+    it "should require a user id" 
 
     it "should require nonblank name" do
       @user.attainments.build(:name => " ").should_not be_valid
@@ -79,4 +77,21 @@ describe Attainment do
   
 end
 
+
+# == Schema Information
+#
+# Table name: attainments
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  reason      :text
+#  due_date    :datetime
+#  progress_id :integer
+#  target      :integer
+#  user_id     :integer
+#  code        :string(255)
+#  public      :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
+#
 
