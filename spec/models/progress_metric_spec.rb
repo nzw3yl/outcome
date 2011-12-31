@@ -15,5 +15,6 @@ end
 #  lang_code  :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  display    :string(255)
 #
 

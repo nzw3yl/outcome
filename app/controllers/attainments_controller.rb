@@ -21,6 +21,7 @@ class AttainmentsController < ApplicationController
 
   def show
     @attainment = Attainment.find(params[:id])
+    @works = @attainment.works
   end
 
   def edit

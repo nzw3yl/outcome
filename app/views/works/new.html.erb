@@ -1,0 +1,8 @@
+<%= simple_form_for @work do |f|%>
+  <%= f.input :description , :label => 'description'%>
+  <%= f.input :effort, :input_html => {:size => 8}, :label => 'quantity'%>
+  <%= f.association :progress_metric, :label => 'contribution', :include_blank => false %>
+  <%= f.association :attainments, :collection => Attainment.all, :label => 'outcomes' %>
+  <%= f.input :user_id, :as => :hidden %>
+  <%= f.submit 'create' %>
+<% end %>

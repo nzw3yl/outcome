@@ -1,3 +1,11 @@
 
 <%= render 'attainment'%>
-
+<% if @works.any? %>
+   <div class="contributions">
+     <% @works.each do |work| %>
+        <p class="entry">
+        <span class=work_list><%= User.find_by_id(work.user_id).name %> <%= work.description%> and contributed  <%= work.effort%> <%= ProgressMetric.find_by_id(work.progress_metric_id).name %></span>
+        </p>
+     <% end %>
+   </div>
+<% end %>

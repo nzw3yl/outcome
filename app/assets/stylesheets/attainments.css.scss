@@ -1,3 +1,52 @@
 // Place all the styles related to the Attainments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contributions {
+}
+
+.contributions .title {
+	height: 41px;
+        color: #5A1F4B;
+	padding: 0px 0px 0px 10px;
+	letter-spacing: -1px;
+}
+
+.contributions .title a {
+	text-decoration: none;
+	color: #5A1F4B;
+	border: none;
+}
+
+.contributions p  {
+	text-decoration: none;
+	color: #5A1F4B;
+	border: none;
+}
+
+.contributions .entry {
+
+}
+
+.contributions .entry .work_list{
+	float: left;
+}
+
+.contributions .entry .contributioned {
+	float: right;
+}
+
+.contributions .entry a {
+	color: #FFFFFF;
+}
+
+.contributions .entry .work_list {
+	height: 38px;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+}

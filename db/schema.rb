@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230222230) do
+ActiveRecord::Schema.define(:version => 20111231043035) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(:version => 20111230222230) do
     t.boolean  "public"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "current"
+  end
+
+  create_table "contributions", :force => true do |t|
+    t.integer  "work_id"
+    t.integer  "attainment_id"
+    t.integer  "effort"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "progress_metrics", :force => true do |t|
@@ -67,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20111230222230) do
     t.string   "lang_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "display"
   end
 
   create_table "users", :force => true do |t|
@@ -87,5 +97,14 @@ ActiveRecord::Schema.define(:version => 20111230222230) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "works", :force => true do |t|
+    t.string   "description"
+    t.integer  "progress_metric_id"
+    t.integer  "effort"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

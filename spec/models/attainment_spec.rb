@@ -82,16 +82,17 @@ end
 #
 # Table name: attainments
 #
-#  id          :integer         not null, primary key
-#  name        :string(255)
-#  reason      :text
-#  due_date    :datetime
-#  progress_id :integer
-#  target      :integer
-#  user_id     :integer
-#  code        :string(255)
-#  public      :boolean
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  reason             :text
+#  due_date           :datetime
+#  progress_metric_id :integer
+#  target             :integer
+#  user_id            :integer
+#  code               :string(255)
+#  public             :boolean
+#  created_at         :datetime
+#  updated_at         :datetime
+#  current            :integer
 #
 

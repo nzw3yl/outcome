@@ -2,6 +2,7 @@ class ProgressMetric < ActiveRecord::Base
   attr_accessible :name, :direction, :code, :symbol, :lang_code
 
   has_many :attainments
+  has_many :works
 end
 # == Schema Information
 #
@@ -15,5 +16,6 @@ end
 #  lang_code  :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  display    :string(255)
 #
 

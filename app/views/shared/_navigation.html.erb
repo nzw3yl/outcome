@@ -19,7 +19,7 @@
 					<li class="current_page_item"><%= link_to('home', root_path) %></li>
                                         <% end %>
         				<li><%= link_to('new', new_attainment_path) %></li>
-					<li><a href="#">contact</a></li>
+					<li><%= link_to('work', new_work_path) %></li>
 					<% if user_signed_in? %>
   					<li>
   					  <%= link_to('logout', destroy_user_session_path, :method=>'delete') %>        
