@@ -1,6 +1,6 @@
 
 class Attainment < ActiveRecord::Base
-  attr_accessible :name, :reason, :due_date, :target, :code, :public, :progress_metric_id, :attainment_ids
+  attr_accessible :name, :reason, :due_date, :target, :code, :public, :progress_metric_id, :attainment_ids, :user_id
 
   validates 		:name, :presence => true
   validates 		:reason, :presence => true
@@ -13,6 +13,7 @@ class Attainment < ActiveRecord::Base
   belongs_to :progress_metric
   has_many   :contributions
   has_many   :works, :through => :contributions
+  has_many   :suggestions
 end
 
 

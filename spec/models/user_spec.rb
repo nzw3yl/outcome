@@ -137,6 +137,18 @@ describe User do
 
   end
 
+  describe "works associations" do
+   
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+    
+    it "should have a works method" do
+      @user.should respond_to(:works)
+    end
+
+  end
+
 end
 
 # == Schema Information

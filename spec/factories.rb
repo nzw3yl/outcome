@@ -28,3 +28,10 @@ Factory.define :work do |w|
   w.effort 100
   w.user_id 2
 end
+
+Factory.define :suggestion do |s|
+  s.name "invade france"
+  s.target 100
+  s.user_id 2
+  s.attainment_id  9
+end

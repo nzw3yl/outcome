@@ -1,0 +1,9 @@
+<%= simple_form_for @suggestion do |f|%>
+  <%= f.input :name , :label => 'suggestion'%>
+  <%= f.input :target, :input_html => {:size => 8}, :label => 'quantity'%>
+  <%= f.association :progress_metric, :label => 'contribution', :include_blank => true %>
+  <%= f.input :user_id, :as => :hidden %>
+  <%= f.input :attainment_id, :as => :hidden,  :input_html => {:value => @attainment.id} %>
+  <%= f.input :email, :label => 'email' %>
+  <%= f.submit 'create' %>
+<% end %>

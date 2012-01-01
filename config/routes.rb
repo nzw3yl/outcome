@@ -1,6 +1,8 @@
 Outcome::Application.routes.draw do
 
 
+  get "suggestions/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -9,10 +11,10 @@ Outcome::Application.routes.draw do
 
   devise_for :users
 
-  resources :users, :only => :show
+  resources :users, 		:only => :show
   resources :attainments
-  resources :works, :only => [:index, :new, :create, :show, :destroy]
-
+  resources :works, 		:only => [:index, :new, :create, :show, :destroy]
+  resources :suggestions, 	:only => [:index, :new, :create, :show, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

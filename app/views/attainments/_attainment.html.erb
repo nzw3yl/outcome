@@ -8,7 +8,7 @@
   <h2 class="title"><a href="#"><%= attainment.name%>  </a></h2>
     <p class="meta">
       <span class="date">Success will be... <%= @pm_name %> by <%=attainment.due_date.strftime("%b/%d/%Y")%></span>
-      <span class="posted"> 0 of target (<%= @pm_symbol%>) : <a href="#"><%= attainment.target%></a></span>
+      <span class="posted"> <%= attainment.current.nil? ? 0 : attainment.current%> of target (<%= @pm_symbol%>) : <a href="#"><%= attainment.target%></a></span>
     </p>
     <div class="entry">
        <span class="date">Why is this important to me? <br /></span>
@@ -19,5 +19,5 @@
     <%= link_to "delete", attainment, :method => :delete, :confirm => "you sure?", :title => "delete outcome" %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
     <%= link_to("contributions", attainment_path(attainment)) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="#" title="b0x w">linkages</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-     <a href="#" title="b0x w">suggestions</p>
+     <%= link_to("suggestion", new_suggestion_path(:id => attainment.id)) %>
 </div>

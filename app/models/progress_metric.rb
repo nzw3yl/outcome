@@ -3,6 +3,7 @@ class ProgressMetric < ActiveRecord::Base
 
   has_many :attainments
   has_many :works
+  has_many :suggestions
 end
 # == Schema Information
 #

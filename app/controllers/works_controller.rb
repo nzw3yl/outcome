@@ -9,8 +9,8 @@ class WorksController < ApplicationController
 
   def create
    @work = current_user.works.build(params[:work])
-   #@attainments_worked = @work.attainment_ids
-   #update_attainment_work unless @attainmemts_worked.nil?
+   @attainments_worked = @work.attainment_ids
+   update_attainment_work unless @attainments_worked.nil?
     if @work.save
       redirect_to attainments_path
     else
@@ -27,11 +27,15 @@ class WorksController < ApplicationController
   private 
 
   def update_attainment_work
-    @attainments_worked.any? do |attainment_id|
+    @attainments_worked.each do |attainment_id|
        contribution = current_user.attainments.find_by_id(attainment_id)
-       if contribution
-        new_work = contribution.current + @work.effort
-        attainment_worked.update_attribute(:current,new_work)
+       if contribution && @work.progress_metric_id == contribution.progress_metric_id
+        if contribution.current.nil?
+	   new_work = @work.effort
+        else
+           new_work = contribution.current + @work.effort
+        end
+          contribution.update_attribute(:current,new_work)
        end
     end
   end

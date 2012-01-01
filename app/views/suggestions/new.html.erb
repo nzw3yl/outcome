@@ -1,0 +1,11 @@
+<%=  render 'form' %>
+<% if @suggestions.any? %>
+   <div class="contributions">
+     <% @suggestions.each do |suggestion| %>
+        <p class="entry">
+        <span class=suggestion_list> <%= suggestion.name%> suggested for  <%= suggestion.user_id.nil? ? suggestion.email : User.find_by_id(suggestion.user_id).name %> </span>
+        </p>
+     <% end %>
+   </div>
+<% end %>
+

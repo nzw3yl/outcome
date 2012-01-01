@@ -76,6 +76,39 @@ describe Attainment do
       @attainment.user.should == @user
     end
   end
+ 
+  describe "progress metric associations" do
+
+    before(:each) do
+      @attainment = @user.attainments.create(@attr)
+    end
+
+    it "should have a progress_metric attribute" do
+      @attainment.should respond_to(:progress_metric)
+    end
+
+  end
+
+  describe "has many associations" do
+   
+    before(:each) do
+      @attainment = @user.attainments.create(@attr)
+    end
+
+    it "should have a suggestions method" do
+      @attainment.should respond_to(:suggestions)
+    end
+
+    it "should have a contributions method" do
+      @attainment.should respond_to(:contributions)
+    end
+
+    it "should have a works method" do
+      @attainment.should respond_to(:works)
+    end
+
+  end
+
 
   
 end
