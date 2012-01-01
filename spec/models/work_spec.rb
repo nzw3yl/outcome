@@ -1,7 +1,18 @@
 require 'spec_helper'
 
 describe Work do
-  pending "add some examples to (or delete) #{__FILE__}"
+   before(:each) do
+   @attr = {
+     :user_id => 2,
+     :progress_metric_id => 4,
+     :effort => 100,
+     :name => "climbing mountains"
+   }
+   end
+
+  it "should create a new instance given valid attributes" do
+    Work.create!(@attr)
+  end
 end
 # == Schema Information
 #

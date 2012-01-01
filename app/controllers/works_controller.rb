@@ -12,9 +12,9 @@ class WorksController < ApplicationController
    #@attainments_worked = @work.attainment_ids
    #update_attainment_work unless @attainmemts_worked.nil?
     if @work.save
-      redirect_to root_path
+      redirect_to attainments_path
     else
-      render 'work/new'
+      render :new
     end
   end
 

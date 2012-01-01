@@ -7,7 +7,7 @@ class Attainment < ActiveRecord::Base
   #validates_datetime 	:due_date, :after => lambda {Date.current}
   validates		:target, :presence => true
   validates_inclusion_of :public, :in => [true, false]
-  #validates		:user_id, :presence => true
+  validates		:user_id, :presence => true
 
   belongs_to :user
   belongs_to :progress_metric

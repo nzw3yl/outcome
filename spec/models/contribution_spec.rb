@@ -1,7 +1,17 @@
 require 'spec_helper'
 
 describe Contribution do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+   @attr = {
+     :work_id => 2,
+     :attainment_id => 4,
+     :effort => 100
+   }
+  end
+
+  it "should create a new instance given valid attributes" do
+    Contribution.create!(@attr)
+  end
 end
 # == Schema Information
 #

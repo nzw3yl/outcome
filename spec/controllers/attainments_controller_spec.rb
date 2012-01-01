@@ -29,7 +29,8 @@ describe AttainmentsController do
        :reason => "someone has to",
        :due_date => Time.now + 90.days,
        :target => 100,
-       :public => false
+       :public => false,
+       :user_id => 2
      }
     end
 
@@ -75,7 +76,8 @@ describe AttainmentsController do
        :reason => "someone has to. why not me",
        :due_date => Time.now + 90.days,
        :target => 100,
-       :public => true
+       :public => true,
+       :user_id => 2
      }
     end
     it "returns http success" do

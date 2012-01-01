@@ -25,7 +25,8 @@ describe Attainment do
       :due_date => Time.now + 90.days,
       :target => 100,
       :code => "RTW",
-      :public => true
+      :public => true,
+      :user_id => 2
     }
   end
 
@@ -35,7 +36,9 @@ describe Attainment do
 
   describe "validations" do
     
-    it "should require a user id" 
+    it "should require a user id" do
+      @user.attainments.build(:user_id => "").should_not be_valid
+    end
 
     it "should require nonblank name" do
       @user.attainments.build(:name => " ").should_not be_valid

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe WorksController do
+  render_views
+  login_user
 
   describe "GET 'index'" do
     it "returns http success" do
@@ -16,23 +18,44 @@ describe WorksController do
     end
   end
 
-  describe "GET 'create'" do
+  describe "POST 'create'" do
+
+    before(:each) do
+        @attr = {
+       :description => "invade france",
+       :effort => 100,
+       :progress_id_metric => 1,
+       :user_id => 2
+     }
+    end
+
     it "returns http success" do
-      get 'create'
-      response.should be_success
+      post 'create', :work => @attr
+      response.should redirect_to(attainments_path)
     end
   end
 
   describe "GET 'show'" do
+ 
+    before(:each) do
+       
+       @work = Factory(:work)
+    end
+
     it "returns http success" do
-      get 'show'
+      get 'show', :id => @work
       response.should be_success
     end
   end
 
   describe "GET 'destroy'" do
+
+    before(:each) do
+        @work = Factory(:work)
+    end
+
     it "returns http success" do
-      get 'destroy'
+      get 'destroy', :id => @work
       response.should be_success
     end
   end

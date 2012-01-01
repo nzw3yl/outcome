@@ -1,7 +1,20 @@
 require 'spec_helper'
 
 describe ProgressMetric do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+   @attr = {
+     :name => "pushups",
+     :direction => false,
+     :code => "pu",
+     :symbol => "pu",
+     :lang_code => "en",
+     :display => "did # pushups today"
+   }
+  end
+
+  it "should create a new instance given valid attributes" do
+    ProgressMetric.create!(@attr)
+  end
 end
 # == Schema Information
 #

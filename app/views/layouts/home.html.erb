@@ -27,10 +27,13 @@
 				</div>
 				<!-- end #content -->
 				<div id="sidebar">
+                                    <% if user_signed_in? %>
+				    <% else%>
                                    <h2 class="sidebar_title">sign in</h2>
 				   <%= render 'users/signin' %><br/>	
  				   <h2 class="sidebar_title">sign up</h2>
                                    <%= render 'users/signup' %>
+                                   <% end %>
 				</div>
 				<!-- end #sidebar -->
 				<div style="clear: both;">&nbsp;</div>

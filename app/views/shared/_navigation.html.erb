@@ -13,7 +13,7 @@
  			        <% end %>
 			</div>
 			<div id="menu">
-				<ul>     <% if controller_name != 'home' %>
+				<ul>     <% if controller_name != 'home' || user_signed_in? %>
 					<li class="current_page_item"><%= link_to('home', attainments_path) %></li>
                                         <% else %>
 					<li class="current_page_item"><%= link_to('home', root_path) %></li>

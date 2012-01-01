@@ -1,0 +1,10 @@
+<%= simple_form_for @attainment do |f|%>
+  <%= f.input :name , :label => 'achievement'%>
+  <%= f.input :reason , :input_html => {:rows =>5, :cols => 34}, :label => 'importance'%>
+  <%= f.input :due_date, :as => :date, :start_year => Date.today.year, :end_year => Date.today.year + 5 , :label => 'target date'%>
+  <%= f.input :target, :input_html => {:size => 8}, :label => 'goal'%>
+  <%= f.association :progress_metric, :label => 'progress by' %>
+  <%= f.input :code, :input_html => {:size => 9}, :label => 'code' %>
+  <%= f.input :public, :as => :radio, :label => 'public',  :collection => [['yes',true],['no',false]] %>
+  <%= f.submit 'update' %>
+<% end %>
