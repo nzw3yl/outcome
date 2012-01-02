@@ -21,10 +21,8 @@ describe SuggestionsController do
   end
 
   describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
-    end
+    it "returns http success" 
+   
   end
 
   describe "GET 'show'" do

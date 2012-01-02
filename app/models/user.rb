@@ -32,5 +32,7 @@ class User < ActiveRecord::Base
 
   has_many :attainments, :dependent => :destroy
   has_many :works, :dependent => :destroy
+
+  
 end
 

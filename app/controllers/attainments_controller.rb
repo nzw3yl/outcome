@@ -2,7 +2,7 @@ class AttainmentsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-   @attainments = Attainment.order("due_date").page(params[:page]).per(5)
+   @attainments = current_user.attainments.order("due_date").page(params[:page]).per(5)
   end
 
   def new
@@ -12,7 +12,7 @@ class AttainmentsController < ApplicationController
 
   def create
     @attainment = current_user.attainments.build(params[:attainment])
-    if @attainment.save
+    if @attainment && @attainment.save
       redirect_to attainments_path
     else
       render 'attainment/new'
@@ -20,17 +20,24 @@ class AttainmentsController < ApplicationController
   end
 
   def show
-    @attainment = Attainment.find(params[:id])
-    @works = @attainment.works
+    @attainment = current_user.attainments.find_by_id(params[:id])
+    if @attainment
+      @works = @attainment.works
+    else
+     redirect_to attainments_path
+    end
   end
 
   def edit
-    @attainment = Attainment.find(params[:id])
+    @attainment = current_user.attainments.find_by_id(params[:id])
+    if @attainment.nil?
+     redirect_to attainments_path
+    end
   end
 
   def update
-    @attainment = Attainment.find(params[:id])
-    if @attainment.update_attributes(params[:attainment])
+    @attainment = current_user.attainments.find_by_id(params[:id])
+    if @attainment && @attainment.update_attributes(params[:attainment])
       redirect_to @attainment, :flash => { :success => "outcome updated"}
     else
       render 'edit'
@@ -38,9 +45,13 @@ class AttainmentsController < ApplicationController
   end
 
   def destroy
-    @attainment = Attainment.find(params[:id])
-    @attainment.destroy
-    redirect_to attainments_path, :flash => { :success => "outcome removed"}
+    @attainment = current_user.attainments.find_by_id(params[:id])
+    if @attainment
+       @attainment.destroy
+       redirect_to attainments_path, :flash => { :success => "outcome removed"}
+    else
+       render 'index', :flash => { :error => "outcome not found"}
+    end
   end
 
 end

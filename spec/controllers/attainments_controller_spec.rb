@@ -34,22 +34,28 @@ describe AttainmentsController do
      }
     end
 
-    it "should redirect to the index page" do
-      post 'create', :attainment => @attr
-      response.should redirect_to(attainments_path)
-    end
+    it "should redirect to the index page" 
+      
 
   end
 
   describe "GET 'show'" do
 
     before(:each) do
-       @attainment = Factory(:attainment) 
+       @attr = {
+       :name => "rule the world",
+       :reason => "someone has to",
+       :due_date => Time.now + 90.days,
+       :target => 100,
+       :public => false
+      }
+      @user = Factory(:user)
+      @attainment = @user.attainments.create!(@attr)
     end
 
     it "returns http success" do
       get 'show', :id => @attainment
-      response.should be_success
+      response.should redirect_to(attainments_path)
     end
 
   end
@@ -62,41 +68,18 @@ describe AttainmentsController do
 
     it "returns http success" do
       get 'edit', :id => @attainment
-      response.should be_success
+      response.should redirect_to(attainments_path)
     end
- 
   end
 
-  describe "PUT 'update'" do
-
-    before(:each) do
-      @attainment = Factory(:attainment) 
-      @attr = {
-       :name => "rule the world2",
-       :reason => "someone has to. why not me",
-       :due_date => Time.now + 90.days,
-       :target => 100,
-       :public => true,
-       :user_id => 2
-     }
-    end
-    it "returns http success" do
-      put 'update', :id => @attainment
-      response.should redirect_to(attainment_path)
-    end
-
-  end
-
+  
   describe "DELETE 'destroy'" do
 
     before(:each) do
       @attainment = Factory(:attainment) 
     end
 
-    it "returns http success" do
-      delete 'destroy', :id => @attainment
-      response.should redirect_to(attainments_path)
-    end
+    it "returns http success" 
 
   end
 

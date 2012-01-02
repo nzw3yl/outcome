@@ -15,8 +15,9 @@ class SuggestionsController < ApplicationController
 
   def create
     @suggestion = Suggestion.new(params[:suggestion])
-    if @suggestion.save
-      redirect_to new_suggestion_path
+    @suggestion.update_attribute(:user_id, User.find_by_email(params[:suggestion][:email]).id)
+    if current_user.attainments.find_by_id(params[:suggestion][:attainment_id]) && @suggestion.save
+      redirect_to new_suggestion_path(:id => params[:suggestion][:attainment_id])
     else
       render attainments_path
     end
@@ -27,5 +28,5 @@ class SuggestionsController < ApplicationController
 
   def destroy
   end
-
+ 
 end

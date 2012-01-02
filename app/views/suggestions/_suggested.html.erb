@@ -1,0 +1,8 @@
+<ul>
+<% @suggested = Suggestion.find_all_by_user_id(current_user) %>
+<% if @suggested %>
+<%    @suggested.each do |suggested| %>
+	<li><a href="#"><%= suggested.name %></a></li>
+  <%  end %>
+<% end %>
+</ul>

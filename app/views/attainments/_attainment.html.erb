@@ -5,10 +5,10 @@
 <% @pm_symbol = @pm.symbol %>
 <% end %>					
 <div class="post">
-  <h2 class="title"><a href="#"><%= attainment.name%>  </a></h2>
+  <h2 class="title"><a href="#"><%= attainment.target%> <%= @pm_name %>   </a></h2>
     <p class="meta">
-      <span class="date">Success will be... <%= @pm_name %> by <%=attainment.due_date.strftime("%b/%d/%Y")%></span>
-      <span class="posted"> <%= attainment.current.nil? ? 0 : attainment.current%> of target (<%= @pm_symbol%>) : <a href="#"><%= attainment.target%></a></span>
+      <span class="date">Success will be... by <%=attainment.due_date.strftime("%b/%d/%Y")%></span>
+      <span class="posted"> <%= attainment.current.nil? ? 0 : attainment.current%> of target (<%= @pm_symbol%>) : <a href="#"><%= attainment.name%></a></span>
     </p>
     <div class="entry">
        <span class="date">Why is this important to me? <br /></span>
