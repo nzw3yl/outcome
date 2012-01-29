@@ -1,5 +1,7 @@
 class Contribution < ActiveRecord::Base
   attr_accessible :work_id, :attainment_id, :effort
+  
+  validates_numericality_of :effort, :only_integer => true
 
   belongs_to :attainment
   belongs_to :work

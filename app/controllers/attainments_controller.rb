@@ -1,5 +1,6 @@
 class AttainmentsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :should_see_attainment, :only => [:show, :edit, :update, :destroy]
 
   def index
    @attainments = current_user.attainments.order("due_date").page(params[:page]).per(5)
@@ -12,7 +13,7 @@ class AttainmentsController < ApplicationController
 
   def create
     @attainment = current_user.attainments.build(params[:attainment])
-    if @attainment && @attainment.save
+    if @attainment.save
       redirect_to attainments_path
     else
       render 'attainment/new'
@@ -20,24 +21,17 @@ class AttainmentsController < ApplicationController
   end
 
   def show
-    @attainment = current_user.attainments.find_by_id(params[:id])
-    if @attainment
-      @works = @attainment.works
-    else
-     redirect_to attainments_path
-    end
+    @attainment = Attainment.find(params[:id])
+    @works = @attainment.works
   end
 
   def edit
-    @attainment = current_user.attainments.find_by_id(params[:id])
-    if @attainment.nil?
-     redirect_to attainments_path
-    end
+    @attainment = Attainment.find(params[:id])
   end
 
   def update
-    @attainment = current_user.attainments.find_by_id(params[:id])
-    if @attainment && @attainment.update_attributes(params[:attainment])
+    @attainment = Attainment.find(params[:id])
+    if @attainment.update_attributes(params[:attainment])
       redirect_to @attainment, :flash => { :success => "outcome updated"}
     else
       render 'edit'
@@ -45,13 +39,16 @@ class AttainmentsController < ApplicationController
   end
 
   def destroy
-    @attainment = current_user.attainments.find_by_id(params[:id])
-    if @attainment
-       @attainment.destroy
-       redirect_to attainments_path, :flash => { :success => "outcome removed"}
-    else
-       render 'index', :flash => { :error => "outcome not found"}
-    end
+    @attainment = Attainment.find(params[:id])
+    @attainment.destroy
+    redirect_to attainments_path, :flash => { :success => "outcome removed"}
   end
-
+  
+  private
+  
+  def should_see_attainment
+    @attainment = Attainment.find(params[:id])
+    redirect_to(root_path) unless current_user.id == @attainment.user_id
+  end
+  
 end

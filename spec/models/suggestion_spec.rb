@@ -17,7 +17,7 @@ describe Suggestion do
      @suggestion.save!
   end
 
-  it "should require an email address" do
+  it "should require a name" do
     no_name_suggestion = @attainment.suggestions.new(@attr.merge(:name => ""))
     no_name_suggestion.should_not be_valid
   end
@@ -29,3 +29,18 @@ describe Suggestion do
     end
   end
 end
+# == Schema Information
+#
+# Table name: suggestions
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  attainment_id      :integer
+#  target             :integer
+#  progress_metric_id :integer
+#  user_id            :integer
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+

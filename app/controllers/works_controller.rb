@@ -33,7 +33,7 @@ class WorksController < ApplicationController
        contribution = current_user.attainments.find_by_id(attainment_id)
        if contribution && @work.progress_metric_id == contribution.progress_metric_id
         if contribution.current.nil?
-	   new_work = @work.effort
+	         new_work = @work.effort
         else
            new_work = contribution.current + @work.effort
         end

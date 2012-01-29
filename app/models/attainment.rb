@@ -1,19 +1,18 @@
 
 class Attainment < ActiveRecord::Base
   attr_accessible :name, :reason, :due_date, :target, :code, :public, :progress_metric_id, :attainment_ids, :user_id
-
-  validates 		:name, :presence => true
-  validates 		:reason, :presence => true
-  #validates_datetime 	:due_date, :after => lambda {Date.current}
-  validates		:target, :presence => true
-  validates_inclusion_of :public, :in => [true, false]
-  validates		:user_id, :presence => true
-
+  
   belongs_to :user
   belongs_to :progress_metric
   has_many   :contributions
   has_many   :works, :through => :contributions
   has_many   :suggestions
+  
+  validates_presence_of 		:name, :reason, :target, :user_id
+  validates_datetime 	:due_date, :after => lambda {Date.current}
+  validates_inclusion_of :public, :in => [true, false]
+
+
 end
 
 
