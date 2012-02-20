@@ -1,39 +1,10 @@
-               <div id="header">
+       <div id="header">
 			<div id="logo">
 				<h1><a href="#">Outcomes </a></h1>
-                                <% if user_signed_in? %>
-				<div id="search" >
-				  <form method="get" action="#">
-				    <div>
-				      <input type="text" name="s" id="search-text" value=""  />
-				      <input type="submit" id="search-submit" value="GO" />
-				    </div>
-				   </form>
-				</div>
- 			        <% end %>
 			</div>
-			<div id="menu">
-				<ul>     <% if controller_name != 'home' || user_signed_in? %>
-					<li class="current_page_item"><%= link_to('home', attainments_path) %></li>
-                                        <% else %>
-					<li class="current_page_item"><%= link_to('home', root_path) %></li>
-                                        <% end %>
-        				<li><%= link_to('new', new_attainment_path) %></li>
-					<li><%= link_to('work', new_work_path) %></li>
-					<% if user_signed_in? %>
-  					<li>
-  					  <%= link_to('logout', destroy_user_session_path, :method=>'delete') %>        
-  					</li>
-					<% else %>
-  					<li><a href="#">suggestions</a></li>
-					<% end %>
-					<% if user_signed_in? %>
-  					<li>
-  					  <%= link_to('profile', edit_user_registration_path) %>
-  					</li>
-					<% else %>
-  					<li><a href="#">mobile</a></li>
-					<% end %>
-				</ul>
-			</div>
+			<% if user_signed_in? %>
+			<%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %> 
+			<% else %>
+			<%= render 'users/signin' %>
+			<% end%>
 		</div>

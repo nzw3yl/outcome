@@ -26,7 +26,7 @@ group :test do
   gem "database_cleaner", ">= 0.7.0"
   gem "launchy", ">= 2.0.5"
   gem 'turn', '0.8.2', :require => false
-  gem 'rb-fsevent', '0.4.3.1', :require => false
+  gem 'rb-fsevent', '0.4.3.1'
   gem 'spork', '~> 0.9.0.rc'
   gem 'growl', '1.0.3'
   gem 'guard-spork', '0.3.2'
