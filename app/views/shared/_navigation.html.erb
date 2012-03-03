@@ -2,9 +2,11 @@
 			<div id="logo">
 				<h1><a href="#">Outcomes </a></h1>
 			</div>
-			<% if user_signed_in? %>
-			<%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %> 
-			<% else %>
-			<%= render 'users/signin' %>
-			<% end%>
+			<div id="sign_in">
+			   <% if user_signed_in? %>
+			   <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %> 
+			   <% else %>
+			   <%= render 'users/signin' %>
+			   <% end%>
+			</div>
 		</div>
